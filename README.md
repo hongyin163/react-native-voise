@@ -120,6 +120,3 @@ module.exports = Component;
 
 ![aa](http://aa)
 
-
-## License
-MIT
