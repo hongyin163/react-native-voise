@@ -118,5 +118,5 @@ module.exports = Component;
 
 ```
 
-![aa](http://aa)
+![](https://github.com/hongyin163/react-native-voise/blob/master/sample/voisedemo0.gif?raw=true)
 

@@ -1,7 +1,7 @@
 {
   "name": "react-native-voise",
   "version": "1.0.0",
-  "description": "",
+  "description": "react-native-voise provide voice recognition service to app,the voice recognition service come from [baidu voise](http://yuyin.baidu.com/ \"Baidu Voise\") \r ###Regist baidu voise account\r Go to [Baidu Voise](http://yuyin.baidu.com/ \"Baidu Voise\"),Regist account for voise service ,and create a app ,then get App ID、 API Key、Secret Key. \r ### Installation",
   "main": "index.android.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,13 @@
     "voise"
   ],
   "author": "hongyin163",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongyin163/react-native-voise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hongyin163/react-native-voise/issues"
+  },
+  "homepage": "https://github.com/hongyin163/react-native-voise#readme"
 }
