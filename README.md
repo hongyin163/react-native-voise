@@ -9,62 +9,19 @@ Go to [Baidu Voise](http://yuyin.baidu.com/ "Baidu Voise"),Regist account for vo
 npm install react-native-voise --save
 ```
 
-### Download and import SDK
+### Link
 
-[Download SDK](http://bos.nj.bpc.baidu.com/v1/audio/Baidu-Voice-SDK-Android-1.6.2.zip)
-
-In the `android` floder create a new folder named `libs`, and then put the `*.jar` file in the SDK into `libs`.
-
-In the `android/src/main` floder create a new folder named `jniLibs`, and then put `x86`, `mips`, `aremabi` into `jniLibs`.
-
-### Add it to your android project
-
-* In `android/setting.gradle`
-
-```gradle
-include ':react-native-voise'
-project(':react-native-voise').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-voise/android')
+```
+react-native link react-native-voise
 ```
 
-* In `android/app/build.gradle`
-
-```gradle
-...
-dependencies {
-  ...
-  compile project(':react-native-voise')
-}
-```
-
-* Register Module (in `MainApplication.java`)
-
-```java
-import cn.mandata.react_native_voise.BaiduVoiseLibPackage;  // <--- import
-
-public class MainApplication extends Application implements ReactApplication {
-
-  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-    ......
-
-    @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-          new BaiduVoiseLibPackage()  // <------ add this line to yout MainApplication class
-      );
-    }
-  };
-
-  ......
-}
-```
 ## Modify AndroidManifest.xml
 
 Add user permission
 
 ```
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -136,4 +93,3 @@ module.exports = Component;
 ```
 
 ![](https://github.com/hongyin163/react-native-voise/blob/master/sample/voisedemo0.gif?raw=true)
-
