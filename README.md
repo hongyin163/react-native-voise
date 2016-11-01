@@ -2,11 +2,20 @@
 react-native-voise provide voice recognition service to app,the voice recognition service come from [baidu voise](http://yuyin.baidu.com/ "Baidu Voise") 
 ###Regist baidu voise account
 Go to [Baidu Voise](http://yuyin.baidu.com/ "Baidu Voise"),Regist account for voise service ,and create a app ,then get App ID、 API Key、Secret Key. 
+
 ### Installation
 
 ```
 npm install react-native-voise --save
 ```
+
+### Download and import SDK
+
+[Download SDK](http://bos.nj.bpc.baidu.com/v1/audio/Baidu-Voice-SDK-Android-1.6.2.zip)
+
+In the `android` floder create a new folder named `libs`, and then put the `*.jar` file in the SDK into `libs`.
+
+In the `android/src/main` floder create a new folder named `jniLibs`, and then put `x86`, `mips`, `aremabi` into `jniLibs`.
 
 ### Add it to your android project
 
@@ -27,36 +36,26 @@ dependencies {
 }
 ```
 
-* Register Module (in MainActivity.java)
+* Register Module (in `MainApplication.java`)
 
 ```java
 import cn.mandata.react_native_voise.BaiduVoiseLibPackage;  // <--- import
 
-public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
-  ......
+public class MainApplication extends Application implements ReactApplication {
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    mReactRootView = new ReactRootView(this);
+  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+    ......
 
-    mReactInstanceManager = ReactInstanceManager.builder()
-      .setApplication(getApplication())
-      .setBundleAssetName("index.android.bundle")
-      .setJSMainModuleName("index.android")
-      .addPackage(new MainReactPackage())
-      .addPackage(new BaiduVoiseLibPackage()) // <------ add this line to yout MainActivity class
-      .setUseDeveloperSupport(BuildConfig.DEBUG)
-      .setInitialLifecycleState(LifecycleState.RESUMED)
-      .build();
-
-    mReactRootView.startReactApplication(mReactInstanceManager, "AndroidRNSample", null);
-
-    setContentView(mReactRootView);
-  }
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+          new BaiduVoiseLibPackage()  // <------ add this line to yout MainApplication class
+      );
+    }
+  };
 
   ......
-
 }
 ```
 ## Modify AndroidManifest.xml
@@ -114,7 +113,7 @@ var Component = React.createClass({
 		          style={styles.button}
 		          api_key={'q0UcNM0glvjekMtBQNWzM92y'} 
 		          secret_key={'8hRsMQCQGNdwqnyF8GkWBgr6WObZFT5l'} 
-		          onReceive={this.onReceive}>      
+		          onReceive={this.onReceive.bind(this)}>      
 		            <Text>点击，说话</Text>
 		        </BaiduVoise>
 			</View>
