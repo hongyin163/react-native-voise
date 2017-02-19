@@ -11,7 +11,7 @@ public class onReceiveEvent extends Event {
     private WritableMap parameters;
 
     protected onReceiveEvent(int viewTag, long timestampMs,WritableMap parameters) {
-        super(viewTag, timestampMs);
+        super(viewTag);
         this.parameters=parameters;
     }
     private String EVENT_NAME="topReceive";
