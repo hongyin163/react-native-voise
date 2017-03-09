@@ -10,8 +10,7 @@ import com.facebook.react.uimanager.events.RCTEventEmitter;
 public class onReceiveEvent extends Event {
     private WritableMap parameters;
 
-    protected onReceiveEvent(int viewTag, long timestampMs,WritableMap parameters) {
-        super(viewTag);
+    protected onReceiveEvent(int viewTag, WritableMap parameters) {
         this.parameters=parameters;
     }
     private String EVENT_NAME="topReceive";

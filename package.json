@@ -1,23 +1,41 @@
 {
-  "name": "react-native-voise",
-  "version": "1.0.0",
-  "description": "react-native-voise provide voice recognition service to app,the voice recognition service come from [baidu voise](http://yuyin.baidu.com/ \"Baidu Voise\") \r ###Regist baidu voise account\r Go to [Baidu Voise](http://yuyin.baidu.com/ \"Baidu Voise\"),Regist account for voise service ,and create a app ,then get App ID、 API Key、Secret Key. \r ### Installation",
-  "main": "index.android.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "baidu",
-    "voise"
-  ],
-  "author": "hongyin163",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hongyin163/react-native-voise.git"
+  "author": {
+    "name": "hongyin163"
   },
   "bugs": {
     "url": "https://github.com/hongyin163/react-native-voise/issues"
   },
-  "homepage": "https://github.com/hongyin163/react-native-voise#readme"
+  "dependencies": {},
+  "description": "react-native-voise provide voice recognition service to app,the voice recognition service come from [baidu voise](http://yuyin.baidu.com/ \"Baidu Voise\") \r ###Regist baidu voise account\r Go to [Baidu Voise](http://yuyin.baidu.com/ \"Baidu Voise\"),Regist acc",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "0f35ac1440d3b9daaba499050298bf5d2a8db42a",
+    "tarball": "https://registry.npmjs.org/react-native-voise/-/react-native-voise-1.0.2.tgz"
+  },
+  "gitHead": "b1ccc12ea78a86869b85da87918517cc239fd2c4",
+  "homepage": "https://github.com/hongyin163/react-native-voise#readme",
+  "keywords": [
+    "baidu",
+    "voise"
+  ],
+  "license": "MIT",
+  "main": "index.android.js",
+  "maintainers": [
+    {
+      "email": "hongyin163@163.com",
+      "name": "hongyin163"
+    }
+  ],
+  "name": "react-native-voise",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongyin163/react-native-voise.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.3"
 }
